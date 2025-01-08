@@ -233,7 +233,7 @@ function App(): JSX.Element {
 
   const getTimeOfDay = (): string => {
     const hour = new Date().getHours();
-    if (hour < 12) return 'morning';
+    if (hour>6 && hour < 12) return 'morning';
     if (hour < 17) return 'afternoon';
     return 'evening';
   };
