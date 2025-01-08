@@ -75,7 +75,7 @@ function App(): JSX.Element {
     return saved ? JSON.parse(saved) : [];
   });
   const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme] = useState<'light' | 'dark'>('light');
   const [selectedTab ] = useState('current');
 
   useEffect(() => {
@@ -267,9 +267,9 @@ function App(): JSX.Element {
       setLoading(false);
     }
   }
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  };
+  // const toggleTheme = () => {
+  //   setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  // };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (city.trim()) {
