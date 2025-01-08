@@ -299,12 +299,12 @@ function App(): JSX.Element {
           >
             {unit === 'metric' ? '°C' : '°F'}
           </button>
-          <button
+          {/* <button
             onClick={toggleTheme}
             className='px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors'
           >
             {theme === 'light' ? '🌙' : '☀️'}
-          </button>
+          </button> */}
         </div>
       </header>
       <form onSubmit={handleSubmit} className='relative mb-8 group'>
