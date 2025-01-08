@@ -61,8 +61,8 @@ interface AirQualityData {
 function App(): JSX.Element {
   const [city, setCity] = useState<string>('');
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [forecastData, setForecastData] = useState<ForecastData[]>([]);
-  const [airQuality, setAirQuality] = useState<AirQualityData | null>(null);
+  const [forecastData,] = useState<ForecastData[]>([]);
+  const [airQuality] = useState<AirQualityData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -70,13 +70,13 @@ function App(): JSX.Element {
     const saved = localStorage.getItem('recentSearches');
     return saved ? JSON.parse(saved) : [];
   });
-  const [favoriteLocations, setFavoriteLocations] = useState<string[]>(() => {
+  const [favoriteLocations] = useState<string[]>(() => {
     const saved = localStorage.getItem('favoriteLocations');
     return saved ? JSON.parse(saved) : [];
   });
   const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [selectedTab, setSelectedTab] = useState('current');
+  const [selectedTab ] = useState('current');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -564,6 +564,7 @@ function App(): JSX.Element {
         </p>
         Made with ❤️ by Achraf EL GHAZI
       </footer>
+      {error && <div className='text-red-500'></div>}
     </main>
   );
 }
